@@ -1,0 +1,66 @@
+\documentclass[%
+    12pt,
+    oneside,
+    a4paper,
+]%
+{article}
+%\usepackage{kompendium}
+\usepackage[utf8]{inputenc}
+%\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{faktor}
+\usepackage{amsmath}
+\usepackage{mathrsfs}  
+\usepackage{parskip}
+\usepackage{titling}
+\usepackage{mdframed}
+\usepackage{amssymb}
+%\usepackage[norsk]{babel}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\setlength{\marginparwidth}{3cm}
+\usepackage{todonotes}
+\usepackage{geometry}
+\usepackage{adjustbox}
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{urlcolor=blue}
+\geometry{
+top=35mm,
+bottom=35mm,
+left=35mm,
+right=35mm
+}
+
+\mdfsetup{
+innertopmargin=5pt,
+linecolor=black,
+middlelinewidth=2pt,
+topline=true,
+skipabove=6pt, 
+skipbelow=6pt
+}
+
+ 
+\newtheorem{theorem}{Teorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definisjon}
+\newtheorem*{goal}{Mål}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+\newtheorem{proposition}{Proposition}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+%\shorthandoff{"}
+
+\title{\vspace{-15mm} The cohomology ring of $G_2(\mathbb{C}^4)$}
+%\subtitle{1. utgave, 1. opplag}
+\author{Torgeir Aambø}
+
+\date{}
+\maketitle
+
+\input{tex/introduction.tex}
+\input{tex/calculation.tex} 
+
+\end{document}

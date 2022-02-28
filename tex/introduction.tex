@@ -1,0 +1,37 @@
+\section{Introduction}
+
+In this little write-up I want to calculate the cohomology ring of $G_2(\mathbb{C}^4$), 
+i.e. the Grassmannian manifold consisting of all 2-dimensional subspaces of $\mathbb{C}^4$. 
+To do this we use the Serre spectral sequence we get from the fibration
+\begin{center}
+\begin{tikzcd}
+U(2) \arrow[r] & V_2(\mathbb{C}^4) \arrow[r] & G_2(\mathbb{C}^4)
+\end{tikzcd}
+\end{center}
+
+where $V_2(\mathbb{C}^4)$ is the Stiefel manifold, 
+i.e. the collection of 2-frames in $\mathbb{C}^4$, and $U(2)$ is the unitary group. 
+I won't do the calculation of the cohomology rings of $V_2(\mathbb{C}^4)$ and $U(2)$, 
+but the latter we can easily get from the homeomorphism $U(n) \simeq U(1)\times SU(n-1)$, 
+giving in particular $U(2)\simeq S^1\times S^3$, and the former can be calculated by induction and the following fibration
+\begin{center}
+\begin{tikzcd}
+S^{2(n-k)+1} \arrow[r] & V_k(\mathbb{C}^n) \arrow[r] & V_{k-1}(\mathbb{C}^n).
+\end{tikzcd}
+\end{center}
+
+We then have 
+\begin{equation*}
+    H^*(V_2(\mathbb{C}^4)) = \Lambda(a_5, a_7) \text{ and } H^*(U(2)) = \Lambda(a_1, a_3)
+\end{equation*}
+where $a_i$ lies in degree $i$. 
+
+From the fibration 
+\begin{center}
+    \begin{tikzcd}
+    U(2) \arrow[r] & V_2(\mathbb{C}^4) \arrow[r] & G_2(\mathbb{C}^4)
+    \end{tikzcd}
+\end{center}
+we get a spectral sequence $E_r$ which uses the cohomology of $G_2(\mathbb{C}^4)$ with coefficients from the cohomology of $U(2)$ to calculate the cohomology of $V_2(\mathbb{C}^4)$. 
+Since we now already know the cohomology ring of $V_2(\mathbb{C}^4)$ we can guess what the cohomology of $G_2(\mathbb{C}^4)$ has to be in order for the spectral sequence to calculate the correct cohomology ring. 
+This is the approach of this write-up. 

@@ -1,0 +1,203 @@
+
+
+\section{Calculation}
+
+We start on the $E_2$ page. 
+On the zeroth column, we get only the cohomology of $U(2)$, hence we at least see
+
+\adjustbox{scale=0.9, center}{
+\begin{tikzcd}[column sep=small]
+4 & a_1a_3 &   &   &   &   &   &   &   &   \\
+3 & a_3    &   &   &   &   &   &   &   &   \\
+2 & 0      &   &   &   &   &   &   &   &   \\
+1 & a_1    &   &   &   &   &   &   &   &   \\
+0 & 1      &   &   &   &   &   &   &   &   \\
+  & 0      & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8
+\end{tikzcd}
+}
+
+Since we know that $H^*(V_2(\mathbb{C}^4))$ has no elements in degree $1$, 
+we know that $H^2(G_2(\mathbb{C}^4))\cong H^1(V_2(\mathbb{C}^4))$, 
+as the generator $a_1$ has to be killed by a differential. 
+Call the generator for the group $H^2(G_2(\mathbb{C}^4))$ that is the image of $a_1$ for $x$. 
+By multiplications by the other generators and itself we then know we have
+
+\adjustbox{scale=0.8, center}{
+\begin{tikzcd}[column sep=small]
+4 & a_1a_3                   &   & a_1a_3x &   & a_1a_3x^2 &   & a_1a_3x^3 &   & a_1a_3x^4 \\
+3 & a_3                      &   & a_3x    &   & a_3x^2    &   & a_3x^3    &   & a_3x^4    \\
+2 &                          &   &         &   &           &   &           &   &           \\
+1 & a_1 \arrow[rrd, "\cong"] &   & a_1x    &   & a_1x^2    &   & a_1x^3    &   & a_1x^4    \\
+0 & 1                        &   & x       &   & x^2       &   & x^3       &   & x^4       \\
+  & 0                        & 1 & 2       & 3 & 4         & 5 & 6         & 7 & 8        
+\end{tikzcd}
+}
+
+We know that the differential is a derivation, 
+hence we get that $d_2(a_1x)=d_2(a_1)x+(-1)^{|x|}a_1d_2(x) = d_2(a_1)x = x^2$ since $d_2(x)=0$. 
+The same calculation for higher powers of $x$ and for $a_1a_3$ and $a_1a_3x$, 
+gives us isomorphisms all the way to the right
+
+\adjustbox{scale=0.8, center}{
+\begin{tikzcd}[column sep=small]
+4 & a_1a_3 \arrow[rrd, "\cong"] &   & a_1a_3x \arrow[rrd, "\cong"] &   & a_1a_3x^2 \arrow[rrd, "\cong"] &   & a_1a_3x^3 \arrow[rrd, "\cong"] &   & a_1a_3x^4 \\
+3 & a_3                         &   & a_3x                         &   & a_3x^2                         &   & a_3x^3                         &   & a_3x^4    \\
+2 &                             &   &                              &   &                                &   &                                &   &           \\
+1 & a_1 \arrow[rrd, "\cong"]    &   & a_1x \arrow[rrd, "\cong"]    &   & a_1x^2 \arrow[rrd, "\cong"]    &   & a_1x^3 \arrow[rrd, "\cong"]    &   & a_1x^4    \\
+0 & 1                           &   & x                            &   & x^2                            &   & x^3                            &   & x^4       \\
+  & 0                           & 1 & 2                            & 3 & 4                              & 5 & 6                              & 7 & 8        
+\end{tikzcd}
+}
+
+Here we see a problem. 
+The generator $a_3$ never gets killed by a differential, 
+but the cohomology of $V_2(\mathbb{C}^4))$ has no elements in degree $3$, 
+so it cant survive. 
+The only degree a differential starting from $a_3$ can land in is $4$, 
+and the only possible non-zero cohomology in degree 4 comes from $H^4(G_2(\mathbb{C}^4))$, 
+which by the likes of it so far has already been killed by a $d_2$ differential. 
+Hence we got to have a $d_4$ differential hitting another generator in $H^4(G_2(\mathbb{C}^4))$, 
+hence we need higher dimensional cohomology in this degree. 
+We call this new generator which is the image of $a_3$ under the $d_3$ differential for $y$. 
+Looking back at the $E_2$ page, we then have new elements
+
+\adjustbox{scale=0.8, center}{
+\begin{tikzcd}[column sep=small]
+4 & a_1a_3 \arrow[rrd, "\cong"] &   & a_1a_3x \arrow[rrd, "\cong"] &   & {a_1a_3x^2, a_1a_3y} \arrow[rrd, "\cong"] &   & {a_1a_3x^3, a_1a_3xy} \arrow[rrd, "\cong"] &   & {a_1a_3x^4, a_1a_3y^2} \\
+3 & a_3                         &   & a_3x                         &   & {a_3x^2, a_3y}                            &   & {a_3x^3, a_3xy}                            &   & {a_3x^4, a_3y^2}       \\
+2 &                             &   &                              &   &                                           &   &                                            &   &                        \\
+1 & a_1 \arrow[rrd, "\cong"]    &   & a_1x \arrow[rrd, "\cong"]    &   & {a_1x^2, a_1y} \arrow[rrd, "\cong"]       &   & {a_1x^3, a_1xy} \arrow[rrd, "\cong"]       &   & {a_1x^4, a_1y^2}       \\
+0 & 1                           &   & x                            &   & {x^2, y}                                  &   & {x^3, xy}                                  &   & {x^4, y^2}             \\
+  & 0                           & 1 & 2                            & 3 & 4                                         & 5 & 6                                          & 7 & 8                     
+\end{tikzcd}
+}
+
+Now, what does this new information and new elements give us? 
+By the same calculation as previously, we get that $d_2(a_1y) = xy$, 
+but here have more information. 
+We know that $H^*(V_2(\mathbb{C}^4))$ has a generator in degree $5$, 
+and this new generator $a_1y$ is the only generator left in total degree $5$ in the spectral sequence. 
+Thus it can't die by a $d_2$ differential. 
+And since it's image is $xy$, this image has to be zero, which gives us the first of two relations on the cohomology ring of our Grassmannian, namely $xy=0$. 
+Hence, as far as we know so far, our $E_2$ page looks like this: 
+
+\adjustbox{scale=0.8, center}{
+\begin{tikzcd}[column sep=small]
+4 & a_1a_3 \arrow[rrd, "\cong"] &   & a_1a_3x \arrow[rrd, "\cong"] &   & {a_1a_3x^2, a_1a_3y} \arrow[rrd, "\cong"] &   & a_1a_3x^3 \arrow[rrd, "\cong"] &   & {a_1a_3x^4, a_1a_3y^2} \\
+3 & a_3                         &   & a_3x                         &   & {a_3x^2, a_3y}                            &   & a_3x^3                         &   & {a_3x^4, a_3y^2}       \\
+2 &                             &   &                              &   &                                           &   &                                &   &                        \\
+1 & a_1 \arrow[rrd, "\cong"]    &   & a_1x \arrow[rrd, "\cong"]    &   & {a_1x^2, a_1y} \arrow[rrd, "\cong"]       &   & a_1x^3 \arrow[rrd, "\cong"]    &   & {a_1x^4, a_1y^2}       \\
+0 & 1                           &   & x                            &   & {x^2, y}                                  &   & x^3                            &   & {x^4, y^2}             \\
+  & 0                           & 1 & 2                            & 3 & 4                                         & 5 & 6                              & 7 & 8                     
+\end{tikzcd}
+}
+
+As far as I'm aware, we can't squeeze any more information out of the $E_2$ page yet. 
+Let us pass to the $E_3$ page and see which generator we are left with after all the isomorphisms kill the generators. 
+We have
+
+\adjustbox{scale=0.8, center}{
+\begin{tikzcd}[column sep=small]
+4 &     &   &   &   & a_1a_3y &   &   &   & {a_1a_3y^2} \\
+3 & a_3 &   &   &   & a_3y    &   &   &   & a_3y^2                 \\
+2 &     &   &   &   &         &   &   &   &                        \\
+1 &     &   &   &   & a_1y    &   &   &   & {a_1y^2}       \\
+0 & 1   &   &   &   & y       &   &   &   & y^2                    \\
+  & 0   & 1 & 2 & 3 & 4       & 5 & 6 & 7 & 8                     
+\end{tikzcd}
+}
+
+and we see that all the $d_3$ differentials either start or land in places which are zero, 
+hence $E_3 = E_4$. On the $E_4$ page however, 
+we know that we at least have one differential, 
+namely the one we used to justify the generator $y$'s existence. 
+By the derivation property of the differentials, 
+we also get that $d_4(a_1a_3y)=a_1y^2$, 
+hence we at least have an $E_4$ page looking like
+
+\adjustbox{scale=0.8, center}{
+\begin{tikzcd}[column sep=small]
+4 &                              &   &   &   & a_1a_3y \arrow[rrrrddd, "\cong"] &   &   &   & a_1a_3y^2 \\
+3 & a_3 \arrow[rrrrddd, "\cong"] &   &   &   & a_3y                             &   &   &   & a_3y^2    \\
+2 &                              &   &   &   &                                  &   &   &   &           \\
+1 &                              &   &   &   & a_1y                             &   &   &   & a_1y^2    \\
+0 & 1                            &   &   &   & y                                &   &   &   & y^2       \\
+  & 0                            & 1 & 2 & 3 & 4                                & 5 & 6 & 7 & 8        
+\end{tikzcd}
+}
+
+We are also lucky enough to know that $H^*(V_2(\mathbb{C}^4))$ has a generator in degree $7$, 
+which we see is $a_3y$ since it is the only one left in the correct total degree. 
+But what happens to the differential $d_4(a_3y) = y^2$ you ask? Do we have $y^2=0$ then, 
+same as last time? 
+Actually, no. 
+Since we know that $a_1y$ and $a_3y$ both are non-zero generators in $H^*(V_2(\mathbb{C}^4))$, 
+their product $a_1a_3y^2$ is also a generator in degree $12$, 
+hence it has to be non-zero, 
+and then $y^2$ has to be non-zero in $H^8(G_2(\mathbb{C}^4))$. 
+But, it still has to die in the spectral sequence though, 
+and the solution is the second relation on the cohomology ring, 
+namely $x^4=y^2$. 
+This ensures that $y^2$ is already killed on the $E_2$ page, 
+and hence that $a_3y$ isn't killed on the $E_4$ page.
+
+To retrospectively correct some things now that we have all the information, 
+we first note that we were lucky we didn't bother writing more that $8$ columns, 
+because everything in row $0$ and columns above $8$ either is a product of $x$'s and $y$'s, 
+or contain powers of $x$ greater or equal to $5$ or powers of $y$ greater or equal to $3$, 
+making $x^5 = xx^4=xy^2=(xy)y=0$ and $y^3=yx^4=0$. 
+Hence our generators $a_1x^4$ and $a_1a_3x^4$ never was killed by any $d_2$ differentials, 
+since their images are $x^5=0$ and $a_3x^5=0$ respectively. 
+Hence we still have $a_1x^4=a_1y^2$ and $a_1a_3x^4=a_1a_3y^2$ on the $E_4$ page. 
+Also, we get that $a_3x^4=a_3y^2$, 
+which means that $a_3y^2$ was killed by a $d_2$ differential on the $E_2$ page, 
+and hence it does not show up on the $E_4$ page. 
+The final form of the $E_2$ page is then
+
+\adjustbox{scale=0.8, center}{
+\begin{tikzcd}[column sep=small]
+4 & a_1a_3 \arrow[rrd] &   & a_1a_3x \arrow[rrd] &   & {a_1a_3x^2, a_1a_3y} \arrow[rrd] &   & a_1a_3x^3 \arrow[rrd] &   & a_1a_3x^4=a_1a_3y^2 \\
+3 & a_3                &   & a_3x                &   & {a_3x^2, a_3y}                   &   & a_3x^3                &   & a_3x^4=a_3y^2       \\
+2 &                    &   &                     &   &                                  &   &                       &   &                     \\
+1 & a_1 \arrow[rrd]    &   & a_1x \arrow[rrd]    &   & {a_1x^2, a_1y} \arrow[rrd]       &   & a_1x^3 \arrow[rrd]    &   & a_1x^4=a_1y^2       \\
+0 & 1                  &   & x                   &   & {x^2, y}                         &   & x^3                   &   & x^4=y^2             \\
+  & 0                  & 1 & 2                   & 3 & 4                                & 5 & 6                     & 7 & 8                  
+\end{tikzcd}
+}
+
+and the final form of the $E_4$ page is
+
+\adjustbox{scale=0.8, center}{
+\begin{tikzcd}[column sep=small]
+4 &                              &   &   &   & a_1a_3y \arrow[rrrrddd, "\cong"] &   &   &   & a_1a_3y^2 \\
+3 & a_3 \arrow[rrrrddd, "\cong"] &   &   &   & a_3y                             &   &   &   &           \\
+2 &                              &   &   &   &                                  &   &   &   &           \\
+1 &                              &   &   &   & a_1y                             &   &   &   & a_1y^2    \\
+0 & 1                            &   &   &   & y                                &   &   &   &           \\
+  & 0                            & 1 & 2 & 3 & 4                                & 5 & 6 & 7 & 8        
+\end{tikzcd}
+}
+
+Since all higher degree differentials, 
+i.e. $d_5$ and above miss any generators due to being too long, 
+we have $E_5=E_{\infty}$. 
+We can also see this because we have arrived at the correct cohomology ring for $V_2(\mathbb{C}^4)$, 
+namely the final page
+
+\adjustbox{scale=0.8, center}{
+\begin{tikzcd}[column sep=small]
+4 &   &   &   &   &      &   &   &   & a_1a_3x^4=a_1a_3y^2 \\
+3 &   &   &   &   & a_3y &   &   &   &                     \\
+2 &   &   &   &   &      &   &   &   &                     \\
+1 &   &   &   &   & a_1y &   &   &   &                     \\
+0 & 1 &   &   &   &      &   &   &   &                     \\
+  & 0 & 1 & 2 & 3 & 4    & 5 & 6 & 7 & 8                  
+\end{tikzcd}
+}
+
+Hence we are done, 
+and we have found the correct cohomology ring for our Grassmannian $G_2(\mathbb{C}^4)$. 
+By all our extensive calculations and work, 
+we finally can say that $H^*(G_2(\mathbb{C}^4)) = \mathbb{Z}(x,y)/(xy, x^4-y^2)$ or if we add the degrees into the names of the generators, 
+$H^*(G_2(\mathbb{C}^4)) = \mathbb{Z}(a_2, a_4)/(a_2a_4, a_2^4-a_4^2)$. 
+Hence the calculation is finished, and we are done. 
